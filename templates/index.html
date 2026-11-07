@@ -1,0 +1,89 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Customer Support Assistant</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="{{ url_for('static', filename='script.js') }}" defer></script>
+</head>
+<body>
+    <main class="chat-app">
+        <header class="chat-header">
+            <div class="brand-icon" aria-hidden="true">S</div>
+
+            <div class="header-details">
+                <h1>Customer Support</h1>
+                <p><span class="status-dot"></span> AI assistant</p>
+            </div>
+
+            <button
+                id="new-chat"
+                class="new-chat-button"
+                type="button"
+                title="Start a new conversation"
+            >
+                New chat
+            </button>
+        </header>
+
+        <section
+            id="chat-messages"
+            class="chat-messages"
+            aria-label="Conversation"
+            aria-live="polite"
+            aria-relevant="additions"
+        >
+            <div class="message assistant-message">
+                <div class="message-avatar">S</div>
+
+                <div class="message-content">
+                    <div class="message-bubble">
+                        Hello! 👋 Welcome to customer support.
+                        How can I help you today?
+                    </div>
+                    <span class="message-time">AI Assistant</span>
+                </div>
+            </div>
+        </section>
+
+        <div class="quick-questions" aria-label="Suggested questions">
+            <button type="button" data-question="What products do you sell?">
+                Our products
+            </button>
+            <button type="button" data-question="How does delivery work?">
+                Delivery
+            </button>
+            <button type="button" data-question="How can I place an order?">
+                Place an order
+            </button>
+        </div>
+
+        <form id="chat-form" class="chat-input-area">
+            <label class="sr-only" for="message-input">
+                Type your message
+            </label>
+
+            <textarea
+                id="message-input"
+                placeholder="Type your message..."
+                rows="1"
+                maxlength="4000"
+                required
+            ></textarea>
+
+            <button id="send-button" type="submit" aria-label="Send message">
+                <span>Send</span>
+                <span aria-hidden="true">➤</span>
+            </button>
+        </form>
+
+        <footer class="chat-footer">
+            AI-generated answers may need confirmation from our support team.
+        </footer>
+    </main>
+</body>
+</html>
